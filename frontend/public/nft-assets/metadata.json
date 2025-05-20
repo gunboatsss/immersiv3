@@ -1,0 +1,27 @@
+{
+    "name": "ImmersivΞ Overflow 2025",
+    "description": "A 3D NFT artwork with AR experience.",
+    "image_url": "https://www.immersiv3.wal.app/nft-preview.webp",
+    "animation_url": "https://immersiv3.wal.app/nft.glb",
+    "file_size": "588 KB",
+    "creator": "ImmersivΞ",
+    "artist": "Artitaya",
+    "copyright": "© 2025 ImmersivΞ",
+    "license": "CC BY-NC 4.0",
+    "keywords": ["3d art", "ar", "abstract", "particle wave"],
+    "category": "art",
+    "style": "abstract",
+    "use_case": "ar experience",
+    "technical_details": {
+        "format": "GLB",
+        "vertices": 1411344,
+        "faces": 2571264,
+        "materials": "PBR",  
+        "rendered_in": "Three.js + WebXR",
+        "animation_duration": "4s",
+        "specular_map": "Grayscale texture used for specular highlights"
+    },
+    "attributes": [
+        { "trait_type": "Edition", "value": "Prototype" }
+    ]
+}
