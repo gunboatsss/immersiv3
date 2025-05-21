@@ -1,7 +1,7 @@
 {
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "installCommand": "npm install",
+    "installCommand": "npm install", 
     "framework": "vite",
     "rewrites": [
         {
@@ -9,15 +9,15 @@
         "destination": "/index.html"
         }
     ],
-    "headers": [ 
+    "headers": [
         {
-        "source": "/nft.glb",
+        "source": "/nft.glb", 
         "headers": [             
             { "key": "Access-Control-Allow-Origin", "value": "*" }, 
             { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
             { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
         ]
-        }, 
+        },
         {
         "source": "/metadata.json", 
         "headers": [             
@@ -25,19 +25,13 @@
             { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
             { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
         ]
-        } 
-    ], 
+        }
+    ],
     "github": {
         "silent": false
     },
     "git": {
         "deploymentEnabled": true,
         "pullRequestRollbackEnabled": true
-    },
-    "routes": [
-        {
-        "src": "/(.*)",
-        "dest": "/frontend/$1"
-        }
-    ]
+    }
 }
