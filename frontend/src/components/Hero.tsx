@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 /**
  * Hero Component: Displays the main landing section of the application.
  *
@@ -45,7 +43,7 @@ function Hero() {
                 <model-viewer
                 className="w-[350px] md:w-[450px] lg:w-[500px] h-[350px] md:h-[450px] lg:h-[500px] 
                 rounded-lg model-viewer-bg mb-5"
-                src="/nft-assets/nft.glb"
+                src="https://immersiv3.wal.app/nft.glb" // "/nft-assets/nft.glb" - LOCAL: dev use only / For production, switch to https://immersiv3.wal.app/nft.glb
                 alt="3D NFT"
                 camera-controls
                 ar

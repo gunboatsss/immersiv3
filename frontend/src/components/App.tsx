@@ -7,7 +7,7 @@ import MintedPage from './MintedPage';
 import ZkLoginPage from './ZkLoginPage';
 import About from './About';
 import Roadmap from './Roadmap';
-import ARPage from './ARPage ';
+import ARPage from './ARPage';
 
 // Define a type for the page state
 type PageType = 'landing' | 'gallery' | 'minted';
@@ -39,7 +39,7 @@ function App() {
         />
         <Route path="/minted" element={<MintedPage setPage={setPage} />} />
         <Route path="/zk" element={<ZkLoginPage setShowZkLogin={setShowZkLogin} />} />
-        <Route path="/ar-rotate" element={<ARPage />} />
+        <Route path="/ar-rotate" element={<ARPage/>} />
         <Route path="/portal" element={<PortalPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/roadmap" element={<Roadmap />} />

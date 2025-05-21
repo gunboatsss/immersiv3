@@ -62,7 +62,7 @@ const ARPage  = () => {
         // 5. Load the 3D model (GLB file).  
         const loader = new GLTFLoader();
         loader.load(
-            '/nft-assets/nft.glb', // LOCAL: dev use only — for production, switch to https://immersiv3.wal.app/nft.glb
+            'https://immersiv3.wal.app/nft.glb', // "/nft-assets/nft.glb" - LOCAL: dev use only / For production, switch to https://immersiv3.wal.app/nft.glb
             (gltf) => {
             const model = gltf.scene;
             model.position.set(0, 1.8, -2);
