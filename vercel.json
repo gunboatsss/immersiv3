@@ -1,43 +1,37 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "installCommand": "npm install",
-    "framework": "vite",
-    "rewrites": [
-        {
-        "source": "/(.*)",
-        "destination": "/index.html"
-        }
-    ],
-    "headers": [ 
-        {
-        "source": "/nft.glb",
-        "headers": [             
-            { "key": "Access-Control-Allow-Origin", "value": "*" }, 
-            { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
-            { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
-        ]
-        }, 
-        {
-        "source": "/metadata.json", 
-        "headers": [             
-            { "key": "Access-Control-Allow-Origin", "value": "*" }, 
-            { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
-            { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
-        ]
-        } 
-    ], 
-    "github": {
-        "silent": false
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install", // หรือ "pnpm install" ถ้าคุณอยากระบุ
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/nft.glb", 
+      "headers": [             
+        { "key": "Access-Control-Allow-Origin", "value": "*" }, 
+        { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
     },
-    "git": {
-        "deploymentEnabled": true,
-        "pullRequestRollbackEnabled": true
-    },
-    "routes": [
-        {
-        "src": "/(.*)",
-        "dest": "/frontend/$1"
-        }
-    ]
+    {
+      "source": "/metadata.json", 
+      "headers": [             
+        { "key": "Access-Control-Allow-Origin", "value": "*" }, 
+        { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    }
+  ],
+  "github": {
+    "silent": false
+  },
+  "git": {
+    "deploymentEnabled": true,
+    "pullRequestRollbackEnabled": true
+  }
 }
