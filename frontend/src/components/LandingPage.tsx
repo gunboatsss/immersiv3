@@ -124,7 +124,7 @@ function LandingPage() {
     >    
       <video
         ref={videoRef}
-        src="public/media/immersiv3.mp4"
+        src="/media/immersiv3.mp4"
         autoPlay
         loop
         muted
