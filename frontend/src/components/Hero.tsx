@@ -46,9 +46,6 @@ function Hero() {
                 src="/nft-assets/nft.glb" // "/nft-assets/nft.glb" - LOCAL: dev use only / For production, switch to external Urls
                 alt="3D NFT"
                 camera-controls
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                ar-status="available"
                 auto-rotate
                 loading="eager"
                 touch-action="pan-y"
@@ -69,7 +66,11 @@ function Hero() {
             </div>
 
             {/* === 3D Viewer + AR user manual === */}
-            <div className="w-full max-w-md p-4 mx-auto mt-8 2xl:mt-0 2xl:absolute 2xl:right-24 2xl:top-2/4">
+            {/* <div className="w-full max-w-md p-4 mx-auto mt-8 2xl:mt-0 2xl:absolute 2xl:right-24 2xl:top-[65%] 2xl:-translate-y-1/2"> */}
+
+            <div className="w-full max-w-md p-4 mx-auto mt-8 2xl:mt-0 2xl:absolute 2xl:right-10 2xl:top-[76%] 2xl:-translate-y-1/2"> 
+
+
             <div className="bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg shadow-xl border border-white/30 p-4">
                 <h3 className="text-lg font-semibold mb-2">Quick Tips:</h3>
                 <ul className="list-none text-sm space-y-2">

@@ -8,6 +8,7 @@ import ZkLoginPage from './ZkLoginPage';
 import About from './About';
 import Roadmap from './Roadmap';
 import ARPage from './ARPage';
+import VRPage from './VRPage'; 
 
 // Define a type for the page state
 type PageType = 'landing' | 'gallery' | 'minted';
@@ -41,6 +42,7 @@ function App() {
         <Route path="/zk" element={<ZkLoginPage setShowZkLogin={setShowZkLogin} />} />
         <Route path="/ar-rotate" element={<ARPage/>} />
         <Route path="/portal" element={<PortalPage />} />
+        <Route path="/vr" element={<VRPage />} /> 
         <Route path="/about" element={<About />} />
         <Route path="/roadmap" element={<Roadmap />} />
       </Routes>

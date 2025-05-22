@@ -26,7 +26,7 @@ function Slogans() {
             duration: 1.5,       // Animation duration
             ease: 'power4.out', // Easing function for smooth animation
             stagger: 0.9,        // Staggered animation for each phrase
-            delay: 5.0,          // Delay before the animation starts
+            delay: 3.0,          // Delay before the animation starts
             scrollTrigger: {
                 trigger: sloganRef.current, // Element that triggers the animation
                 start: 'top 85%',       // Start animation when the top of the element is 85% in the viewport
@@ -47,7 +47,7 @@ function Slogans() {
             opacity: 1,
             duration: 1,          // Animation duration
             ease: 'power2.out', // Easing function
-            delay: 3.0,          // Delay before animation
+            delay: 1.0,          // Delay before animation
             scrollTrigger: {
                 trigger: finalLineRef.current, // Trigger element
                 start: 'top 90%',       // Start when the top is 90% in viewport

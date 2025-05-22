@@ -39,7 +39,7 @@ module simple_nft::simple_nft_tests {
         simple_nft::mint(
             &admin_cap,
             &mut mint_state,
-            b"https://immersiv3.wal.app/metadata.json",
+            b"https://example.com/nft.glb",
             test_scenario::ctx(scenario)
         );
 
@@ -87,7 +87,7 @@ module simple_nft::simple_nft_tests {
         simple_nft::mint(
             &admin_cap,
             &mut mint_state,
-            b"https://immersiv3.wal.app/metadata.json",
+            b"https://example.com/nft.glb",
             test_scenario::ctx(scenario)
         );
 

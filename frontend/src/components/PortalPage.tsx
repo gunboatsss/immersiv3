@@ -26,11 +26,11 @@ function PortalPage() {
             {/* === Enter the Portal Buttons / WebXR + Three.js === */}
             <div className="flex justify-center space-x-7 mb-5 mt-5 md:mt-10 lg:mt-15">
             <Link
-                to="/ar-rotate"
+                to="/vr"
                 className="connect-btn px-6 py-2 border border-[var(--text-color)] rounded-md 
                 text-lg hover:bg-[var(--text-color)] hover:text-[var(--bg-color)]"
             >
-                Comming Soon
+                Enter Portal
             </Link>
             </div>
         </div>
@@ -48,7 +48,11 @@ function PortalPage() {
             </div>
 
             {/* === VR user manual === */}
-            <div className="w-full max-w-md p-4 mx-auto mt-8 2xl:mt-0 2xl:absolute 2xl:right-24 2xl:top-[152%]">
+            {/* <div className="w-full max-w-md p-4 mx-auto mt-8 2xl:mt-0 2xl:absolute 2xl:right-10 2xl:top-[188%] "> */}
+                            <div className="w-full max-w-md p-4 mx-auto mt-8 custom-lg:mt-0 custom-lg:absolute custom-lg:right-10 custom-lg:top-[188%] 
+                    custom-xl:right-10 custom-xl:top-[157.5%]">    
+
+
             <div className="bg-[var(--bg-color)] text-[var(--text-color)] rounded-lg shadow-xl border border-white/30 p-4">
                 <h3 className="text-lg font-semibold mb-2">Getting Started:</h3>
                 <ul className="list-none text-sm space-y-2 leading-relaxed">

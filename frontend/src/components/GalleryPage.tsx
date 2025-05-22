@@ -40,6 +40,20 @@ function GalleryPage({ setPage, setShowZkLogin, showZkLogin }: GalleryPageProps)
         aboutSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
+    // Clean up any stray canvas or WebXR elements
+    const canvases = document.querySelectorAll('canvas');
+    canvases.forEach(canvas => {
+      if (canvas.parentElement === document.body) {
+        document.body.removeChild(canvas);
+      }
+    });
+
+    const arButtons = document.querySelectorAll('#ARButton');
+    arButtons.forEach(button => {
+      if (button.parentElement === document.body) {
+        document.body.removeChild(button);
+      }
+    });
   }, [location]);
 
   return (

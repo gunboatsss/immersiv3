@@ -24,6 +24,7 @@ module.exports = {
             screens: {
                 // Custom breakpoints for responsive design control
                 'custom-md': '1025px', // Applies to viewports 1025px and wider
+                'custom-lg': '1366px', // Applies to viewports 1366px and wider
                 'custom-xl': '1550px', // Applies to viewports 1550px and wider
             },
         },
