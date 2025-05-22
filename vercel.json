@@ -1,45 +1,7 @@
 {
-<<<<<<< HEAD
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "installCommand": "npm install", 
-    "framework": "vite",
-    "rewrites": [
-        {
-        "source": "/(.*)",
-        "destination": "/index.html"
-        }
-    ],
-    "headers": [
-        {
-        "source": "/nft.glb", 
-        "headers": [             
-            { "key": "Access-Control-Allow-Origin", "value": "*" }, 
-            { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
-            { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
-        ]
-        },
-        {
-        "source": "/metadata.json", 
-        "headers": [             
-            { "key": "Access-Control-Allow-Origin", "value": "*" }, 
-            { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
-            { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
-        ]
-        }
-    ],
-    "github": {
-        "silent": false
-    },
-    "git": {
-        "deploymentEnabled": true,
-        "pullRequestRollbackEnabled": true
-    }
-}
-=======
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install", 
+  "installCommand": "npm install",
   "framework": "vite",
   "rewrites": [
     {
@@ -49,17 +11,41 @@
   ],
   "headers": [
     {
-      "source": "/nft.glb", 
-      "headers": [             
-        { "key": "Access-Control-Allow-Origin", "value": "*" }, 
+      "source": "/nft.glb",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
       ]
     },
     {
-      "source": "/metadata.json", 
-      "headers": [             
-        { "key": "Access-Control-Allow-Origin", "value": "*" }, 
+      "source": "/metadata.json",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    }, 
+    {
+      "source": "/nft-assets/nft.glb",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    },
+    {
+      "source": "/nft-assets/metadata.json",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    },
+    {
+      "source": "/nft-assets/nft-preview.webp",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
       ]
@@ -73,4 +59,3 @@
     "pullRequestRollbackEnabled": true
   }
 }
->>>>>>> a00ade47c0e8a280b49835c38a2368000476d8b2
