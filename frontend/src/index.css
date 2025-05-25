@@ -7,11 +7,13 @@ section h2 {
     margin-top: 2rem !important;
 }
 
-/* h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-} */
-
 .model-viewer-bg {
     background-color: #000000;
 }
+
+@layer utilities {
+    .immersiv3-vr-container canvas {
+    @apply absolute top-0 left-0 w-full h-full;
+    }
+}
+

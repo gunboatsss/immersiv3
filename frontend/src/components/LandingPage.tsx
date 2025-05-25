@@ -130,18 +130,19 @@ function LandingPage() {
         muted
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-16 text-[#f1f1f1]"> 
-        <h1 ref={logoRef} className="text-6xl lg:text-7xl font-bold mb-8">
-          ImmersivΞ
-        </h1>
-        <p
-          ref={slogan1Ref}
-          className="text-2xl md:text-5xl font-semibold leading-snug max-w-5xl mx-auto px-4 whitespace-pre-wrap text-[#b2b2b2]"
-        >
-          <span className="block">Where imagination shapes reality</span>
-          <span className="block">— in 3D, AR, and beyond</span>
-        </p>
-
+      {/* === Overlay Content === */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-6 md:pt-16 text-[#f1f1f1]">  
+          <h1 ref={logoRef} className="text-3xl md:text-5xl lg:text-7xl font-bold mb-2">
+                    ImmersivΞ
+                </h1>
+                <p
+                    ref={slogan1Ref}
+                    className="text-base md:text-2xl lg:text-4xl font-semibold leading-snug max-w-5xl mx-auto px-4 whitespace-pre-wrap text-[#b2b2b2]"
+                >
+                    <span className="block">Where imagination shapes reality</span>
+                    <span className="block">— in 3D, AR, and beyond</span>
+                </p>
+                
         <button
           ref={enterButtonRef}
           onClick={() => {
@@ -168,9 +169,8 @@ function LandingPage() {
               ease: 'power2.in'
             }, 0);
           }}
-
-          className="connect-btn px-6 py-3 border border-[#b2b2b2] text-[#b2b2b2] rounded-md text-lg hover:bg-[#b2b2b2] hover:text-black mt-8"
-
+          
+          className="connect-btn px-3 py-1.5 text-sm md:px-6 md:py-3 md:text-lg border border-[#b2b2b2] text-[#b2b2b2] rounded-md hover:bg-[#b2b2b2] hover:text-black mt-8"
         >
           Enter the Gallery
         </button>

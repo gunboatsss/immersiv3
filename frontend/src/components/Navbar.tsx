@@ -68,12 +68,15 @@ function Navbar({ isLanding, setPage, setShowZkLogin }: NavbarProps) {
                 >
                 {isMuted ? '🔇' : '🔊'}
                 </button>
-                <button
-                onClick={() => navigate('/gallery', { state: { scrollTo: 'about' } })}
-                className="connect-btn px-4 py-2 border border-[#f1f1f1] text-[#f1f1f1] rounded-md hover:bg-[#f1f1f1] hover:text-black"
+
+                <Link
+                to="/gallery"
+                state={{ scrollTo: 'about' }}
+                className="text-[#f1f1f1] hover:text-[#b2b2b2]"
                 >
-                About
-                </button>
+                    About
+                </Link>
+
             </>
             ) : (
             <>
@@ -86,8 +89,8 @@ function Navbar({ isLanding, setPage, setShowZkLogin }: NavbarProps) {
 
                 {/* === Use address from useCurrentAccount() === */}
                 <ConnectButton
-                className="connect-btn px-4 py-2 border border-[var(--text-color)] rounded-md hover:bg-[var(--text-color)] hover:text-[var(--bg-color)]"                                
-                connectText="Connect Wallet"    
+                className="connect-btn px-2 py-1 text-xs md:px-3 md:py-1.5 md:text-sm lg:px-4 lg:py-2 lg:text-base border border-[var(--text-color)] rounded-md hover:bg-[var(--text-color)] hover:text-[var(--bg-color)]"
+                            connectText="Connect Wallet"
                 />
                 {address && (
                 <span className="text-sm">
@@ -101,7 +104,10 @@ function Navbar({ isLanding, setPage, setShowZkLogin }: NavbarProps) {
                     console.log('Clicked Google Login, calling setShowZkLogin(true)');
                     setShowZkLogin(true);
                 }}
-                className="connect-btn px-4 py-2 border border-[var(--text-color)] rounded-md hover:bg-[var(--text-color)] hover:text-[var(--bg-color)]"                
+                            
+                className="connect-btn px-2 py-1 text-xs md:px-3 md:py-1.5 md:text-sm 
+                lg:px-4 lg:py-2 lg:text-base border border-[var(--text-color)] rounded-md 
+                hover:bg-[var(--text-color)] hover:text-[var(--bg-color)]"
                 >
                 Google Login
                 </button>

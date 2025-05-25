@@ -21,7 +21,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-frontend/public/nft-assets/
 
 # Node dependencies
 node_modules/

@@ -8,7 +8,7 @@ import Roadmap from './Roadmap';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import ZkLoginPage from './ZkLoginPage';
-import '@google/model-viewer';
+
 
 interface GalleryPageProps {
   setPage: (page: 'landing' | 'gallery' | 'minted') => void;

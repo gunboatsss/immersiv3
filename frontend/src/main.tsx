@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './components/App';
 import './index.css'; // Global styles
 import './model-viewer.d.ts'; // Type declaration for model-viewer
+import '@google/model-viewer';
+
 
 import {
   SuiClientProvider,
@@ -30,7 +32,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <SuiClientProvider networks={networkConfig} defaultNetwork="testnet">
         {/* Provide wallet connection capabilities */}
         <WalletProvider autoConnect>
-
           {/* Render the main application component */}
           <App />
         </WalletProvider>
