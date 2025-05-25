@@ -1,5 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSignAndExecuteTransaction, useSuiClient, useSuiClientQuery } from '@mysten/dapp-kit';
+import { Transaction } from '@mysten/sui/transactions';
+import { Link, redirect } from 'react-router-dom';
+
+const PACKAGE_ID = `0x8cea9e3b3602ed67c0069ccee5ed13d9c32cf6c2c4068a68fef21fd2b2d204c3`;
+const MINT_STATE_ID = `0xb85f13afab1d6159901e77ecf01e6d4b2ecc92e2996c2150407bec1730768ca2`;
+
+function NumberMinted() {
+    const { data, isLoading, isSuccess } = useSuiClientQuery(
+        'getObject',
+        {
+            id: MINT_STATE_ID,
+            options: {
+                showContent: true,
+            }
+        }
+    );
+    return (
+        <span className="mt-4 text-sm font-light mb-4">
+            {isLoading ? 'Loading...' : isSuccess ? data.data?.content?.dataType === "moveObject" ? `${data.data.content.fields.minted} / 1111 Minted` : 'something wrong' : 'Error fetching mint data'}
+        </span>
+        )
+}
 
 /**
  * Hero Component: Displays the main landing section of the application.
@@ -9,8 +30,28 @@ import { Link } from 'react-router-dom';
  * and a way to get started (e.g., minting an NFT).
  */
 function Hero() {
+    const { mutate: signAndExecute } = useSignAndExecuteTransaction();
+
     const handleMint = () => {
         console.log('Initiate NFT Mint on Sui Blockchain');
+        const tx = new Transaction();
+        tx.moveCall({
+            package: PACKAGE_ID,
+            module: 'simple_nft',
+            function: 'mint',
+            arguments: [
+                tx.object(MINT_STATE_ID), // The state object ID for minting
+                tx.pure.vector('u8', [...'https://example.com'].map(x => x.charCodeAt(0))), // Replace with actual GLB URL
+            ]
+        });
+        signAndExecute({
+            transaction: tx,
+        }, {
+            onSuccess: () => {
+                console.log('Minting transaction successful!');
+                redirect('/minted');
+            }
+        });
     };
 
     return (
@@ -61,7 +102,7 @@ function Hero() {
                 >
                 Free Mint Now
                 </button>
-                <span className="mt-4 text-sm font-light mb-4">0/1111 Minted</span>
+                <NumberMinted />
             </div>
             </div>
 
