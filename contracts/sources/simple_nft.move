@@ -7,9 +7,9 @@
 module simple_nft::simple_nft {
     use sui::url::{Self, Url};
     use sui::event;
-    use sui::object;
-    use sui::transfer;
-    use sui::tx_context;
+    //use sui::object;
+    //use sui::transfer;
+    //use sui::tx_context;
     use std::ascii;
 
     // === Constants ===
@@ -17,10 +17,10 @@ module simple_nft::simple_nft {
     const MAX_URL_LENGTH: u64 = 2048; 
     const E_SUPPLY_EXHAUSTED: u64 = 0;
     const E_INVALID_URL: u64 = 1;
-    const E_UNAUTHORIZED: u64 = 2;
+    //const E_UNAUTHORIZED: u64 = 2;
 
     // === Structs ===
-    public struct SIMPLE_NFT has drop {}
+    // public struct SIMPLE_NFT has drop {}
     public struct ArtworkNFT has key, store {
         id: object::UID,
         edition: u64,
@@ -30,10 +30,10 @@ module simple_nft::simple_nft {
         id: object::UID,
         minted: u64,
     }
-    public struct AdminCap has key {
-        id: object::UID,
-        admin_address: address,
-    }
+    //public struct AdminCap has key {
+    //    id: object::UID,
+    //   admin_address: address,
+    //}
 
     // === Events ===
     public struct MintEvent has copy, drop {
@@ -81,14 +81,14 @@ module simple_nft::simple_nft {
         url_str
     }
 
-    fun init(_witness: SIMPLE_NFT, ctx: &mut tx_context::TxContext) {
+    fun init(ctx: &mut tx_context::TxContext) {
         let sender = tx_context::sender(ctx);
-        transfer::transfer(MintState { id: object::new(ctx), minted: 0 }, sender);
-        transfer::transfer(AdminCap { id: object::new(ctx), admin_address: sender }, sender);
+        transfer::share_object(MintState { id: object::new(ctx), minted: 0 });
+        //transfer::transfer(AdminCap { id: object::new(ctx), admin_address: sender }, sender);
     }
 
-    public entry fun mint(admin_cap: &AdminCap, state: &mut MintState, url_bytes: vector<u8>, ctx: &mut tx_context::TxContext) {
-        assert!(tx_context::sender(ctx) == admin_cap.admin_address, E_UNAUTHORIZED);
+    public entry fun mint(state: &mut MintState, url_bytes: vector<u8>, ctx: &mut tx_context::TxContext) {
+        // assert!(tx_context::sender(ctx) == admin_cap.admin_address, E_UNAUTHORIZED);
         assert!(state.minted < TOTAL_SUPPLY, E_SUPPLY_EXHAUSTED);
         let url_str = validate_url(url_bytes);
         state.minted = state.minted + 1;
