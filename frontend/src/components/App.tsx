@@ -9,7 +9,7 @@ import About from './About';
 import Roadmap from './Roadmap';
 import ARPage from './ARPage';
 import VRPage from './VRPage'; 
-
+import '@mysten/dapp-kit/dist/index.css';
 // Define a type for the page state
 type PageType = 'landing' | 'gallery' | 'minted';
 
